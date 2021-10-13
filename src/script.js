@@ -7,7 +7,7 @@ const scene = new THREE.Scene()
 const sizes = { width: window.innerWidth, height: window.innerHeight}
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
-    alpha: true
+    alpha: true 
 })
 
 window.addEventListener('resize', () => {
