@@ -24,16 +24,11 @@ window.addEventListener('resize', () => {
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.8)
-scene.add(ambientLight)
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
-directionalLight.position.set(0, 0.25, 0)
-scene.add(directionalLight)
-
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.set(0, 1, 0)
 scene.add(camera) 
 
+environment.base.map(x => {scene.add(x)})
 environment.floor.map(x => {scene.add(x)})
 
 const tick = () =>
