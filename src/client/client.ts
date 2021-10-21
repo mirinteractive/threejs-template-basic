@@ -37,6 +37,12 @@ cameraFolder.add(camera.position, 'z', 0, 10)
 cameraFolder.open()
 
 environment.base.map(x => {scene.add(x)})
+//이거 나중에 애메션 추가로 poc 진행
+// const baseEnvironment = environment.base.filter(x => {
+//     scene.add(x)
+//     lightFolder.add(x, 'intensity').min(0).max(10).step(0.001).name(x.type)
+//     return x
+// })
 environment.floor.map(x => {scene.add(x)})
 
 function animate() {
