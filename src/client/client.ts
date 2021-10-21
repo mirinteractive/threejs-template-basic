@@ -1,6 +1,9 @@
 import * as THREE from 'three'
 import * as environment from './environment'
 
+// static folder location
+// 'static/....'
+
 const scene = new THREE.Scene()
 const sizes = { width: window.innerWidth, height: window.innerHeight}
 
