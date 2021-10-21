@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import * as environment from './environment'
+import * as dat from 'three/examples/jsm/libs/dat.gui.module'
 
 // static folder location
 // 'static/....'
@@ -29,6 +30,11 @@ function onWindowResize() {
     renderer.setSize(sizes.width, sizes.height)
     render()
 }
+
+const gui = new dat.GUI()
+const cameraFolder = gui.addFolder('Camera')
+cameraFolder.add(camera.position, 'z', 0, 10)
+cameraFolder.open()
 
 environment.base.map(x => {scene.add(x)})
 environment.floor.map(x => {scene.add(x)})
