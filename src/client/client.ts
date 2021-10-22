@@ -1,6 +1,7 @@
 import * as THREE from 'three'
-import * as environment from './environment'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import * as dat from 'three/examples/jsm/libs/dat.gui.module'
+import * as environment from './environment'
 
 // static folder location
 // 'static/....'
@@ -21,6 +22,8 @@ const camera = new THREE.PerspectiveCamera(
     1000
 )
 camera.position.set(0,1,0)
+
+new OrbitControls(camera, renderer.domElement)
 
 window.addEventListener('resize', onWindowResize, false)
 function onWindowResize() {
