@@ -14,6 +14,7 @@ scene.background = new THREE.Color('#8b9dc3')
 
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(sizes.width, sizes.height)
+renderer.physicallyCorrectLights = true
 document.body.appendChild(renderer.domElement)
 
 const camera = new THREE.PerspectiveCamera(
@@ -36,17 +37,22 @@ function onWindowResize() {
 }
 
 const gui = new dat.GUI()
-const cameraFolder = gui.addFolder('Camera')
-cameraFolder.add(camera.position, 'z', 0, 10)
-cameraFolder.open()
-
-environment.base.map(x => {scene.add(x)})
 //이거로 애니메이션 poc 진행
 // const baseEnvironment = environment.base.filter(x => {
 //     scene.add(x)
 //     lightFolder.add(x, 'intensity').min(0).max(10).step(0.001).name(x.type)
 //     return x
 // })
+const lightFolder = gui.addFolder('Light')
+lightFolder.open()
+environment.base.filter(x => {
+    scene.add(x)
+    lightFolder.add(x, 'intensity').min(0).max(10).step(0.001).name(x.type)
+    lightFolder.add(x.position, 'x').min(- 5).max(5).step(0.001).name('lightX')
+    lightFolder.add(x.position, 'y').min(- 5).max(5).step(0.001).name('lightY')
+    lightFolder.add(x.position, 'z').min(- 5).max(5).step(0.001).name('lightZ')
+    return x
+})
 environment.floor.map(x => {scene.add(x)})
 objects.geometry.map(x=>{scene.add(x)})
 
