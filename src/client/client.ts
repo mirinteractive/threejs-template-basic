@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import * as dat from 'three/examples/jsm/libs/dat.gui.module'
 import * as environment from './environment'
+import * as objects from './object'
 
 // static folder location
 // 'static/....'
@@ -21,7 +22,7 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     1000
 )
-camera.position.set(0,1,0)
+camera.position.set(-5,1,0)
 
 new OrbitControls(camera, renderer.domElement)
 
@@ -40,13 +41,14 @@ cameraFolder.add(camera.position, 'z', 0, 10)
 cameraFolder.open()
 
 environment.base.map(x => {scene.add(x)})
-//이거 나중에 애메션 추가로 poc 진행
+//이거로 애니메이션 poc 진행
 // const baseEnvironment = environment.base.filter(x => {
 //     scene.add(x)
 //     lightFolder.add(x, 'intensity').min(0).max(10).step(0.001).name(x.type)
 //     return x
 // })
 environment.floor.map(x => {scene.add(x)})
+objects.geometry.map(x=>{scene.add(x)})
 
 function animate() {
     requestAnimationFrame(animate)
