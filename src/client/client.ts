@@ -15,6 +15,7 @@ scene.background = new THREE.Color('#8b9dc3')
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(sizes.width, sizes.height)
 renderer.physicallyCorrectLights = true
+renderer.outputEncoding = THREE.sRGBEncoding
 document.body.appendChild(renderer.domElement)
 
 const camera = new THREE.PerspectiveCamera(
