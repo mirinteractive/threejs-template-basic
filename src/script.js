@@ -5,8 +5,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import * as dat from 'lil-gui'
 import * as environment from './environment'
 import * as objects from './objects'
-import waterVertexShader from './shaders/water/vertex.glsl'
-import waterFragmentShader from './shaders/water/fragment.glsl'
+import sampleVertexShader from './shaders/sample/vertex.glsl'
+import sampleFragmentShader from './shaders/sample/fragment.glsl'
 
 const scene = new THREE.Scene()
 const sizes = { width: window.innerWidth, height: window.innerHeight}
