@@ -3,7 +3,8 @@
 ## You will be able to..
 - create basic scene using orbit control
 - import 3d model (glsl||fbx)
-- shader && glsl
+- shader & glsl
+- ... and lots of other stuff
 
 ## This starter references..
 - three.js journey : webpack and basic settings
