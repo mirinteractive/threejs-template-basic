@@ -5,13 +5,13 @@
 - import 3d model (glsl||fbx)
 - shader && glsl
 
-### Other starter
-- [mouse scroll starter](https://github.com/mirinteractive/threejs-templete-mousewheel.git)
-- [fps view starter](https://github.com/mirinteractive/threejs-templete-keydown.git)
-
 ## This starter references..
 - three.js journey : webpack and basic settings
 
 ## How you can run the code..
 - npm install
 - npm run dev
+
+### Other starter
+- [mouse scroll starter](https://github.com/mirinteractive/threejs-templete-mousewheel.git)
+- [fps view starter](https://github.com/mirinteractive/threejs-templete-keydown.git)
