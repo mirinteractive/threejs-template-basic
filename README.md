@@ -1,4 +1,4 @@
-# Threejs starter template
+# Threejs basic starter template
 
 ## You will be able to..
 - create basic scene using orbit control
