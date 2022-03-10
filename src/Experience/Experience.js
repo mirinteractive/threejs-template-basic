@@ -4,6 +4,8 @@ import Time from "./Utils/Time.js";
 import Camera from './Camera.js';
 import Renderer from './Renderer.js';
 import World from './World/World.js';
+import Resources from './Utils/Resources.js';
+import sources from './sources.js';
 
 //convert Experience into singleton
 let instance = null
@@ -26,6 +28,7 @@ export default class Experience {
     this.sizes = new Sizes()
     this.time = new Time()
     this.scene = new THREE.Scene() //create scene (not class)
+    this.resources = new Resources(sources) //send sources
     this.camera = new Camera()
     this.renderer = new Renderer()
     this.world = new World()

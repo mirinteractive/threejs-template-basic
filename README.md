@@ -1,16 +1,18 @@
-# Three.js Journey
+# Threejs basic starter template
 
-## Setup
-Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
+## You will be able to..
+- create basic scene using orbit control
+- import 3d model (glsl||fbx)
+- shader & glsl
+- ... and lots of other stuff
 
-``` bash
-# Install dependencies (only the first time)
-npm install
+## This starter references..
+- three.js journey : webpack and basic settings
 
-# Run the local server at localhost:8080
-npm run dev
+## How you can run the code..
+- npm install
+- npm run dev
 
-# Build for production in the dist/ directory
-npm run build
-```
+### Other starter
+- [mouse scroll starter](https://github.com/mirinteractive/threejs-templete-mousewheel.git)
+- [fps view starter](https://github.com/mirinteractive/threejs-templete-keydown.git)
