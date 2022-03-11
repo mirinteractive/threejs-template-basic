@@ -12,12 +12,11 @@ import sources from './sources.js';
 let instance = null
 
 export default class Experience {
-  constructor(canvas){ //retrieve canvas
-    //convert Experience into singleton
-    if(instance){ //check if it exists
+  constructor(canvas){
+    if(instance){ 
       return instance
     }
-    instance = this //save instance
+    instance = this 
 
     //global access
     window.experience = this
@@ -29,8 +28,8 @@ export default class Experience {
     this.debug = new Debug()
     this.sizes = new Sizes()
     this.time = new Time()
-    this.scene = new THREE.Scene() //create scene (not class)
-    this.resources = new Resources(sources) //send sources
+    this.scene = new THREE.Scene()
+    this.resources = new Resources(sources)
     this.camera = new Camera()
     this.renderer = new Renderer()
     this.world = new World()
@@ -43,6 +42,8 @@ export default class Experience {
     this.time.on('tick', ()=>{
       this.update()
     })
+
+    this.scene.background = new THREE.Color( '#000000' );
   }
 
   resize(){
@@ -56,33 +57,5 @@ export default class Experience {
     this.world.update()
 
     this.renderer.update()
-  }
-
-  //destroy scene, stop updating
-  destroy(){
-    this.sizes.off('resize')
-    this.time.off('tick')
-
-    //traverse whole scene
-    this.scene.traverse((child)=>{
-      if(child instanceof THREE.Mesh){
-        child.geometry.dispose()
-
-        for(const key in child.material){
-          const value = child.material[key]
-
-          if(value && typeof value.dispose === 'function'){
-            value.dispose()
-          }
-        }
-      }
-    })
-
-    this.camera.controls.dispose()
-    this.renderer.instance.dispose()
-
-    if(this.debug.active){
-      this.debug.ui.destroy()
-    }
   }
 }
