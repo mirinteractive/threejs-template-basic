@@ -1,5 +1,6 @@
 import Experience from "../Experience.js";
 import Environment from './Environment.js';
+import SampleFloor from "./SampleFloor.js";
 import SampleIcon from "./SampleIcon.js";
 
 export default class World {
@@ -10,6 +11,7 @@ export default class World {
 
     this.resources.on('ready', ()=>{
       this.sampleIcon = new SampleIcon()
+      this.sampleFloor = new SampleFloor()
       this.environment = new Environment()
     })
   }

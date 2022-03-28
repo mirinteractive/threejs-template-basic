@@ -2,8 +2,8 @@
 
 ## You will be able to..
 - create basic scene using orbit control
-- import 3d model (glsl||fbx)
-- shader & glsl
+- import 3d model (gltf||fbx)
+- shader (glsl)
 - ... and lots of other stuff
 
 ## This starter references..
@@ -16,3 +16,4 @@
 ### Other starter
 - [mouse scroll starter](https://github.com/mirinteractive/threejs-templete-mousewheel.git)
 - [fps view starter](https://github.com/mirinteractive/threejs-templete-keydown.git)
+- [semi-spaghetti basic starter:poc](https://github.com/mirinteractive/threejs-template-poc.git)
